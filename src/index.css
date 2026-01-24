@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Wings of Wisdom Foundation - Design System
+  Theme: Ocean Blue (#2596be)
+  All colors are defined in HSL format for maximum flexibility
+*/
+
+@layer base {
+  :root {
+    /* ========================================
+       NEUTRAL PALETTE - Modern Minimalism
+       ======================================== */
+    --background: 204 60% 98%;
+    /* #F5F9FC - Alice White */
+    --foreground: 209 29% 15%;
+    /* #1F2933 - Gunmetal / Charcoal Navy */
+
+    --card: 0 0% 100%;
+    /* Pure white */
+    --card-foreground: 209 29% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 209 29% 15%;
+
+    /* ========================================
+       PRIMARY PALETTE - Steel Blue / Ocean Blue (#2596BE)
+       Trust, Professionalism, Calm
+       ======================================== */
+    --primary: 199 65% 44%;
+    /* #2596BE - Steel Blue / Ocean Blue */
+    --primary-foreground: 0 0% 100%;
+    /* White text on primary */
+    --primary-light: 199 95% 60%;
+    /* #38BDF8 - Sky Blue */
+    --primary-dark: 199 65% 37%;
+    /* #1E7A9F - Darker Ocean Blue */
+
+    /* ========================================
+       SECONDARY PALETTE - Darker Blue
+       Energy, Depth, Contrast
+       ======================================== */
+    --secondary: 199 65% 37%;
+    /* #1E7A9F - Darker Ocean Blue */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 199 65% 44%;
+    /* #2596BE - Steel Blue */
+    --secondary-dark: 199 65% 30%;
+    /* #175F80 - Deep Ocean Blue */
+
+    /* ========================================
+       ACCENT PALETTE - Sky Blue (#38BDF8)
+       Innovation, Highlights, CTAs
+       ======================================== */
+    --accent: 199 95% 60%;
+    /* #38BDF8 - Sky Blue */
+    --accent-foreground: 209 29% 15%;
+    /* Dark text on accent */
+    --accent-light: 199 95% 74%;
+    /* #7DD3FC */
+    --accent-dark: 199 89% 48%;
+    /* #0EA5E9 */
+
+    /* ========================================
+       MUTED COLORS - Subtle Backgrounds
+       ======================================== */
+    --muted: 214 32% 91%;
+    /* #E2E8F0 - Light gray */
+    --muted-foreground: 215 16% 47%;
+    /* #64748B - Medium gray */
+
+    /* ========================================
+       SEMANTIC COLORS
+       ======================================== */
+    --success: 199 95% 60%;
+    /* #38BDF8 - Sky Blue (same as accent) */
+    --success-foreground: 209 29% 15%;
+
+    --warning: 173 80% 40%;
+    /* #14B8A6 - Teal */
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 170 76% 64%;
+    /* #5EEAD4 - Light Teal */
+    --warning-dark: 174 79% 26%;
+    /* #0F766E - Deep Teal */
+
+    --destructive: 0 72% 60%;
+    /* #EF4444 - Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    /* #0EA5E9 - Sky blue */
+    --info-foreground: 0 0% 100%;
+
+    /* ========================================
+       UI ELEMENTS
+       ======================================== */
+    --border: 214 20% 84%;
+    /* #CBD5E1 - Light Blue Gray */
+    --input: 214 20% 84%;
+    --ring: 199 65% 44%;
+    /* Match primary */
+    --radius: 0.75rem;
+    /* 12px - Modern rounded corners */
+
+    /* ========================================
+       CUSTOM TOKENS - NGO Specific
+       ======================================== */
+    --hero-gradient-start: 199 65% 44%;
+    /* Steel Blue */
+    --hero-gradient-end: 199 95% 60%;
+    /* Sky Blue */
+    --warm-bg: 204 60% 98%;
+    /* Alice White tint */
+    --overlay-dark: 209 29% 15%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 19% 35%;
+    --sidebar-primary: 199 65% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 204 60% 98%;
+    --sidebar-accent-foreground: 209 29% 15%;
+    --sidebar-border: 214 20% 84%;
+    --sidebar-ring: 199 65% 44%;
+  }
+
+  .dark {
+    /* ========================================
+       DARK MODE - Inverted for Accessibility
+       ======================================== */
+    --background: 209 29% 15%;
+    /* #1F2933 - Gunmetal / Charcoal Navy */
+    --foreground: 204 60% 98%;
+    /* #F5F9FC - Alice White */
+
+    --card: 217 33% 17%;
+    /* #1E293B - Dark card */
+    --card-foreground: 204 60% 98%;
+
+    --popover: 217 33% 17%;
+    --popover-foreground: 204 60% 98%;
+
+    /* Primary - Brighter for dark mode */
+    --primary: 199 95% 60%;
+    /* #38BDF8 - Sky Blue */
+    --primary-foreground: 209 29% 15%;
+    --primary-light: 199 95% 74%;
+    /* #7DD3FC */
+    --primary-dark: 199 65% 44%;
+    /* #2596BE */
+
+    /* Secondary - Adjusted for dark mode */
+    --secondary: 199 65% 44%;
+    /* #2596BE - Steel Blue */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 199 65% 54%;
+    --secondary-dark: 199 65% 37%;
+
+    /* Accent - Vibrant in dark mode */
+    --accent: 199 95% 74%;
+    /* #7DD3FC - Light Sky Blue */
+    --accent-foreground: 209 29% 15%;
+    --accent-light: 199 95% 80%;
+    --accent-dark: 199 95% 60%;
+
+    --muted: 217 25% 20%;
+    /* #293548 - Dark muted */
+    --muted-foreground: 215 20% 65%;
+    /* #94A3B8 */
+
+    --success: 199 95% 74%;
+    /* #7DD3FC - Light Sky Blue */
+    --success-foreground: 209 29% 15%;
+
+    --warning: 170 76% 64%;
+    /* #5EEAD4 - Light Teal */
+    --warning-foreground: 209 29% 15%;
+    --warning-light: 170 76% 74%;
+    /* Lighter Teal */
+    --warning-dark: 173 80% 40%;
+    /* #14B8A6 - Teal */
+
+    --destructive: 0 72% 70%;
+    /* #F87171 - Lighter red */
+    --destructive-foreground: 209 29% 15%;
+
+    --info: 199 89% 55%;
+    /* Brighter sky blue */
+    --info-foreground: 209 29% 15%;
+
+    --border: 217 25% 25%;
+    /* #374151 - Dark border */
+    --input: 217 25% 25%;
+    --ring: 199 95% 60%;
+
+    --hero-gradient-start: 199 65% 37%;
+    --hero-gradient-end: 199 95% 60%;
+    --warm-bg: 209 29% 20%;
+    --overlay-dark: 0 0% 8%;
+
+    --sidebar-background: 209 29% 15%;
+    --sidebar-foreground: 204 60% 96%;
+    --sidebar-primary: 199 95% 60%;
+    --sidebar-primary-foreground: 209 29% 15%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 204 60% 96%;
+    --sidebar-border: 217 25% 25%;
+    --sidebar-ring: 199 95% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography Improvements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    font-weight: 800;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 700;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+    font-weight: 600;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  /* Image Protection - Prevent downloading/saving */
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
+  }
+
+  img::selection {
+    background: transparent;
+  }
+
+  img::-moz-selection {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+
+  /* Gradient utilities */
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)) 0%, hsl(var(--hero-gradient-end)) 100%);
+  }
+
+  .bg-ocean-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .bg-warm-gradient {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--warning)) 100%);
+  }
+
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .bg-glass {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Text gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-secondary to-warning bg-clip-text text-transparent;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Shadow utilities */
+  .shadow-glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-glow-accent {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  }
+}
