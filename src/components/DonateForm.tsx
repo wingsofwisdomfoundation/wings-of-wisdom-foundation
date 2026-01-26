@@ -48,6 +48,8 @@ export function DonateForm({
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [panNumber, setPanNumber] = useState('');
+    const [address, setAddress] = useState('');
     const [status, setStatus] = useState<PaymentStatus>('idle');
 
     const handlePresetClick = useCallback((value: number) => {
@@ -70,12 +72,20 @@ export function DonateForm({
             toast.error('Please enter a valid email address');
             return false;
         }
+        if (!panNumber.trim()) {
+            toast.error('Please enter your PAN number');
+            return false;
+        }
+        if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(panNumber.toUpperCase())) {
+            toast.error('Please enter a valid PAN number (e.g., ABCDE1234F)');
+            return false;
+        }
         if (!selectedAmount || selectedAmount < minimumAmount) {
             toast.error(`Minimum donation amount is ₹${minimumAmount}`);
             return false;
         }
         return true;
-    }, [name, email, selectedAmount, minimumAmount]);
+    }, [name, email, panNumber, selectedAmount, minimumAmount]);
 
     const handleDonate = useCallback(async () => {
         if (!validateForm() || !selectedAmount) return;
@@ -214,6 +224,33 @@ export function DonateForm({
                         placeholder="+91 XXXXX XXXXX"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
+                        disabled={isProcessing}
+                    />
+                </div>
+
+                <div className="space-y-2">
+                    <Label htmlFor="donor-pan">PAN Number *</Label>
+                    <Input
+                        id="donor-pan"
+                        type="text"
+                        placeholder="ABCDE1234F"
+                        value={panNumber}
+                        onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
+                        disabled={isProcessing}
+                        maxLength={10}
+                        required
+                    />
+                    <p className="text-xs text-muted-foreground">Required for tax deduction certificate</p>
+                </div>
+
+                <div className="space-y-2">
+                    <Label htmlFor="donor-address">Address (Optional)</Label>
+                    <Input
+                        id="donor-address"
+                        type="text"
+                        placeholder="Enter your address"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
                         disabled={isProcessing}
                     />
                 </div>

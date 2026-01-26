@@ -18,7 +18,7 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/anuja-n-8aab6769/"
   },
   {
-    name: "Samuel Datta",
+    name: "Samuel",
     role: "Co-Founder",
     department: "Executive Team",
     bio: "An experienced professional hailing from a Human Resources and Administration background, who has an unwavering belief in using his expertise to create a positive impact in people's lives. Samuel, with his extensive experience spanning over 20 years in various industries, has chosen to devote the last 12 years to the social sector. His passion lies in educating children and building a sustainable society, as he tirelessly works towards raising awareness and implementing effective practices. Samuel firmly asserts that even the smallest actions have the power to bring about significant change, encouraging others to join him in his noble mission.",

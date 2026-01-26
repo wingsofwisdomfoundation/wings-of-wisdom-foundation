@@ -11,7 +11,7 @@ const team = [
     initials: "AN",
   },
   {
-    name: "Samuel Datta",
+    name: "Samuel",
     role: "Co-Founder",
     bio: "Strategic thinker passionate about sustainable development and social impact.",
     avatar: "/images/team/samuel-datta.png",
