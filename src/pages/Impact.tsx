@@ -72,7 +72,7 @@ const Impact = () => {
             {[
               { icon: MapPin, label: "Active Regions", value: "5", color: "text-primary" },
               { icon: GraduationCap, label: "Partner Schools", value: "3", color: "text-accent" },
-              { icon: Users, label: "Total Beneficiaries", value: "11,000+", color: "text-primary" },
+              { icon: Users, label: "Total Beneficiaries", value: "13,000+", color: "text-primary" },
               { icon: TrendingUp, label: "Active Programs", value: "4", color: "text-accent" },
             ].map((stat, index) => (
               <motion.div

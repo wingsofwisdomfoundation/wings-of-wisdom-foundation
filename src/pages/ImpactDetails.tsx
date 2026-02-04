@@ -106,11 +106,11 @@ const ImpactDetails = () => {
                                 <CardContent>
                                     <div className="space-y-4">
                                         <div className="rounded-lg bg-primary/10 p-4">
-                                            <div className="text-2xl font-bold text-primary">1,104</div>
+                                            <div className="text-2xl font-bold text-primary">1,500+</div>
                                             <div className="text-sm text-muted-foreground">Direct Beneficiaries</div>
                                         </div>
                                         <div className="rounded-lg bg-accent/10 p-4">
-                                            <div className="text-2xl font-bold text-accent">10,000+</div>
+                                            <div className="text-2xl font-bold text-accent">12,000+</div>
                                             <div className="text-sm text-muted-foreground">Indirect Beneficiaries</div>
                                         </div>
                                     </div>

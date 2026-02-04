@@ -12,17 +12,15 @@ const partnerCategories = [
       { name: "Government of Punjab", contribution: "Collaborative initiatives for community development and social welfare", logo: "/images/partners/govt-punjab-logo.png" }
     ]
   },
-  // {
-  //   title: "Corporate Partners",
-  //   icon: Building2,
-  //   color: "text-primary",
-  //   partners: [
-  //     { name: "Tech Solutions India", contribution: "CSR Partnership - Education Infrastructure" },
-  //     { name: "Global Finance Corp", contribution: "Financial Literacy Programs" },
-  //     { name: "Healthcare Systems Ltd", contribution: "Mobile Health Clinics Support" },
-  //     { name: "Green Energy Co", contribution: "Sustainable Development Projects" }
-  //   ]
-  // },
+  {
+    title: "Corporate Partnerships",
+    icon: Building2,
+    color: "text-primary",
+    partners: [
+      { name: "KJS Group", contribution: "Leading infrastructure conglomerate supporting sustainable development through cement, construction, and green building solutions", logo: "/images/partners/kjs-group-logo.jpg" },
+      { name: "Hunch Ventures", contribution: "Multi-stage investment firm empowering social entrepreneurs with strategic capital and mentorship across diverse sectors", logo: "/images/partners/hunch-logo.jpg" }
+    ]
+  },
   {
     title: "NGO Collaborators",
     icon: HandshakeIcon,
@@ -128,7 +126,7 @@ const Partners = () => {
                                   <img
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
-                                    className="w-16 h-16 object-contain"
+                                    className="h-16 w-auto object-contain max-w-[100px]"
                                   />
                                 </div>
                               )}
@@ -209,19 +207,23 @@ const Partners = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-white rounded-lg overflow-hidden shadow-2xl p-8"
+              className="relative bg-white rounded-lg overflow-hidden shadow-2xl p-8 flex items-center justify-center"
               style={{
-                maxWidth: '90vw',
-                maxHeight: '90vh'
+                width: '90vw',
+                height: 'auto',
+                maxWidth: '600px',
+                minHeight: '300px'
               }}
             >
-              <img
-                src={selectedLogo.src}
-                alt={selectedLogo.name}
-                className="max-w-full max-h-[70vh] object-contain mx-auto"
-              />
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold text-foreground">{selectedLogo.name}</h3>
+              <div className="w-full flex flex-col items-center">
+                <img
+                  src={selectedLogo.src}
+                  alt={selectedLogo.name}
+                  className="w-auto h-auto max-w-full max-h-[50vh] object-contain mx-auto"
+                />
+                <div className="mt-6 text-center">
+                  <h3 className="text-2xl font-bold text-foreground">{selectedLogo.name}</h3>
+                </div>
               </div>
             </motion.div>
           </motion.div>
