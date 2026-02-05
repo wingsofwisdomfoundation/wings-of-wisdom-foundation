@@ -6,9 +6,16 @@ import paymentRoutes from './routes/paymentRoutes.js';
 const app = express();
 
 app.use(cors({
-    origin: config.frontendUrl,
+    origin: [
+        config.frontendUrl,
+        'https://wingsofwisdomfoundation.org',
+        'https://www.wingsofwisdomfoundation.org',
+        'http://localhost:5173',
+        'http://localhost:4173'
+    ],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
+    credentials: true
 }));
 
 app.use(express.json());
